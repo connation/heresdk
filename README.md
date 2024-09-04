@@ -1,3 +1,6 @@
+# To run the project
+Extract the heresdk.zip file in the root directory of the project
+
 # HERE SDK for Flutter (Navigate Edition) - Version 4.19.3.0
 
 The HERE SDK for Flutter enables you to build powerful map applications for iOS and Android from a single code base. Bundled along with it are many HERE assets from the [HERE platform](https://www.here.com/products/platform) incorporating microservices and highly modularized components.
