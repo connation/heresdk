@@ -1,5 +1,5 @@
 # To run the project
-Extract the heresdk.zip file in the root directory of the project
+Extract the **heresdk.zip** file in the root directory of the project
 
 # HERE SDK for Flutter (Navigate Edition) - Version 4.19.3.0
 
