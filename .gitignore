@@ -1,2 +1,6 @@
 pubspec.lock
-
+android/libs/heresdk-navigate-4.19.3.0.126240.release.aar
+android/libs/heresdk-navigate-debug-symbols-table-4.19.3.0.126240.release.zip
+ios/Frameworks/heresdk.xcframework/ios-arm64/dSYMs/heresdk.framework.dSYM/Contents/Resources/DWARF/heresdk
+ios/Frameworks/heresdk.xcframework/ios-arm64/heresdk.framework/heresdk
+ios/Frameworks/heresdk.xcframework/ios-arm64_x86_64-simulator/heresdk.framework/heresdk

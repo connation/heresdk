@@ -1,0 +1,56 @@
+group 'com.here.here_sdk'
+version '1.0-SNAPSHOT'
+def thisDir = buildscript.sourceFile.getParent()
+
+buildscript {
+    ext.kotlin_version = '1.5.31'
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        flatDir {
+            dirs "${thisDir}/libs"
+        }
+        google()
+        jcenter()
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 34
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+    defaultConfig {
+        minSdkVersion 23
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // Require at least OpenGL ES 2.0 for lite and 3.0 for other variants.
+        if ('navigate' == 'lite') {
+            manifestPlaceholders["minSupportedGLESVersion"] = "0x00020000"
+        } else {
+            manifestPlaceholders["minSupportedGLESVersion"] = "0x00030000"
+        }
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation(name: 'heresdk-navigate-4.19.3.0.126240.release', ext: 'aar')
+}
